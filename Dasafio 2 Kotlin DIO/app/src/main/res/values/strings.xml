@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Desafio 2 Kotlin DIO</string>
+    <string name="ola_dio">Ola mundo DIO</string>
 </resources>

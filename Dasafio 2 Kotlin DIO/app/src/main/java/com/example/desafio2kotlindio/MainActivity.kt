@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             Desafio2KotlinDIOTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "Mundo",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = "Olá grandioso $name!",
         modifier = modifier
     )
 }
