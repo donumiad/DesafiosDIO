@@ -8,13 +8,134 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tv_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        android:text="@string/carros_eletricos"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_carros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/tv_carros"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_favoritos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo" />
+
+    <TextView
+        android:id="@+id/tv_favoritos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_favoritos"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_carros"
+        app:layout_constraintTop_toBottomOf="@+id/tv_titulo" />
+
+    <ImageView
+        android:id="@+id/iv_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_carros"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_preco"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/tv_preco"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_imageView" />
+
+    <TextView
+        android:id="@+id/tv_precoValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/tv_precoValor"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_preco"
+        app:layout_constraintTop_toBottomOf="@+id/iv_imageView" />
+
+    <TextView
+        android:id="@+id/tv_bateria"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/tv_bateria"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_preco" />
+
+    <TextView
+        android:id="@+id/tv_bateriaValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/tv_bateriaValor"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_bateria"
+        app:layout_constraintTop_toBottomOf="@+id/tv_precoValor" />
+
+    <TextView
+        android:id="@+id/tv_potencia"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/tv_potencia"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bateria" />
+
+    <TextView
+        android:id="@+id/tv_potenciaValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/tv_potenciaValor"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_potencia"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bateriaValor" />
+
+    <TextView
+        android:id="@+id/tv_recarga"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/tv_recarga"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_potencia" />
+
+    <TextView
+        android:id="@+id/tv_recargaValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/tv_recargaValor"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_recarga"
+        app:layout_constraintTop_toBottomOf="@+id/tv_potenciaValor" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
