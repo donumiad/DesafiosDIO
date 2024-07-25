@@ -11,4 +11,8 @@
     <string name="tv_potenciaValor">646 vc</string>
     <string name="tv_recarga">Recarga</string>
     <string name="tv_recargaValor">23 min</string>
+    <string name="et_precokwh">Preco Kwh</string>
+    <string name="et_kmPercorrido">Km percorrido</string>
+    <string name="calcular">Calcular</string>
+    <string name="iv_representacao_de_carro">Representacao de carro</string>
 </resources>
