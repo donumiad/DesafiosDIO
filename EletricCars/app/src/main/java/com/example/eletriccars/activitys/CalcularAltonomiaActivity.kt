@@ -1,15 +1,15 @@
-package com.example.eletriccars
+package com.example.eletriccars.activitys
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.eletriccars.R
 
-class MainActivity : AppCompatActivity() {
+class CalcularAltonomiaActivity: AppCompatActivity() {
+
     lateinit var preco: EditText
     lateinit var kmPercorrido: EditText
     lateinit var btnCalcular: Button
@@ -17,11 +17,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_calcular_altonomia)
 
         setupViewe()
         setupListeners()
-
     }
 
     fun setupViewe(){
@@ -37,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun calcular(){
+    private fun calcular(){
         val entradaPreco = preco.text.toString().toFloat()
         val km = kmPercorrido.text.toString().toFloat()
 

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activitys.MainActivity">
 
     <TextView
         android:id="@+id/tv_titulo"
@@ -137,46 +137,14 @@
         app:layout_constraintStart_toEndOf="@+id/tv_recarga"
         app:layout_constraintTop_toBottomOf="@+id/tv_potenciaValor" />
 
-    <EditText
-        android:id="@+id/et_precoKwh"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:maxLength="10"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="@string/et_precokwh"
-        app:layout_constraintTop_toBottomOf="@id/tv_recargaValor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <EditText
-        android:id="@+id/et_kmPercorrido"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:maxLength="10"
-        android:inputType="numberDecimal"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="@string/et_kmPercorrido"
-        app:layout_constraintTop_toBottomOf="@+id/et_precoKwh"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
     <Button
-        android:id="@+id/btn_calcular"
+        android:id="@+id/btn_calcularmain"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/calcular"
-        app:layout_constraintTop_toBottomOf="@+id/et_kmPercorrido"
-        app:layout_constraintStart_toStartOf="@+id/et_kmPercorrido"
-        app:layout_constraintEnd_toEndOf="@+id/et_kmPercorrido"
-        />
-    <EditText
-        android:id="@+id/et_altonomia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/btn_calcular"
-        app:layout_constraintStart_toStartOf="@+id/btn_calcular"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
