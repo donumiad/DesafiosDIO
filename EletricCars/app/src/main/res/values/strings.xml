@@ -16,4 +16,5 @@
     <string name="calcular">Calcular Autonomia</string>
     <string name="iv_representacao_de_carro">Representacao de carro</string>
     <string name="calcule_a_autonomia_do_carro">Calcule a autonomia do carro</string>
+    <string name="btn_resultado">resultado</string>
 </resources>

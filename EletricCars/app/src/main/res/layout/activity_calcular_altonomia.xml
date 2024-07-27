@@ -4,16 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/iv_fecharPagina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/voltar_pagina" />
+
     <TextView
         android:id="@+id/tv_titulo_page2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="@string/calcule_a_autonomia_do_carro"
-        android:textSize="20sp"
         android:textStyle="bold"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_fecharPagina" />
 
     <EditText
         android:id="@+id/et_precoKwh"
@@ -52,7 +62,7 @@
         android:id="@+id/btn_calcular"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="resultado"
+        android:text="@string/btn_resultado"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

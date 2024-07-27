@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.eletriccars.R
@@ -13,6 +14,7 @@ class CalcularAltonomiaActivity: AppCompatActivity() {
     lateinit var preco: EditText
     lateinit var kmPercorrido: EditText
     lateinit var btnCalcular: Button
+    lateinit var voltarPagina: ImageView
     lateinit var resultado: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,11 +30,15 @@ class CalcularAltonomiaActivity: AppCompatActivity() {
         kmPercorrido = findViewById(R.id.et_kmPercorrido)
         btnCalcular = findViewById(R.id.btn_calcular)
         resultado = findViewById(R.id.et_altonomia)
+        voltarPagina = findViewById(R.id.iv_fecharPagina)
     }
 
     fun setupListeners(){
         btnCalcular.setOnClickListener{
             calcular()
+        }
+        voltarPagina.setOnClickListener{
+            finish()
         }
     }
 
