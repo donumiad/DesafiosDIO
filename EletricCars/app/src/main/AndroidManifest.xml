@@ -13,7 +13,7 @@
         android:theme="@style/Theme.EletricCars"
         tools:targetApi="31">
         <activity
-            android:name=".activitys.MainActivity"
+            android:name=".UI.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activitys.CalcularAltonomiaActivity"/>
+        <activity android:name=".UI.CalcularAltonomiaActivity"/>
 
     </application>
 
