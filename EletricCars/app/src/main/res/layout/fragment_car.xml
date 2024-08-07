@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_carros"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:listitem="@layout/carro_item"
+        tools:visibility="visible"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_calcularmain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/calcular"
+        android:src="@drawable/calculate"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <ProgressBar
+        android:id="@+id/pb_progresso"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/iv_noconection"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/signal_wifi_off"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/tv_sem_internet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_nocenetion"
+        android:visibility="gone"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        app:layout_constraintStart_toStartOf="@id/iv_noconection"
+        app:layout_constraintEnd_toEndOf="@id/iv_noconection"
+        app:layout_constraintTop_toBottomOf="@id/iv_noconection"
+        tools:visibility="visible"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

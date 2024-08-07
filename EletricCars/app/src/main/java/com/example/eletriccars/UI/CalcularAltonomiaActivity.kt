@@ -27,7 +27,7 @@ class CalcularAltonomiaActivity: AppCompatActivity() {
     fun setupViewe(){
         preco = findViewById(R.id.et_precoKwh)
         kmPercorrido = findViewById(R.id.et_kmPercorrido)
-        btnCalcular = findViewById(R.id.btn_calcular)
+        btnCalcular = findViewById(R.id.btn_calcularAutonomia)
         resultado = findViewById(R.id.et_altonomia)
         voltarPagina = findViewById(R.id.iv_fecharPagina)
     }

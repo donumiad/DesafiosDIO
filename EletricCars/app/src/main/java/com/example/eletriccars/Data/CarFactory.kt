@@ -13,7 +13,7 @@ object CarFactory {
             recarga = "30 min",
             urlPhoto = "www.google.com.br"
         )
-    )
 
+    )
 
 }

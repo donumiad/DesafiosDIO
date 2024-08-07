@@ -17,4 +17,8 @@
     <string name="iv_representacao_de_carro">Representacao de carro</string>
     <string name="calcule_a_autonomia_do_carro">Calcule a autonomia do carro</string>
     <string name="btn_resultado">resultado</string>
+    <string name="fragment_car">Carros</string>
+    <string name="favorite_fragmet">Favoritos</string>
+    <string name="tv_nocenetion">Ops. Parece que não há conexão</string>
+    <string name="response_erro">Algo deu errado, tente mais tarde</string>
 </resources>
