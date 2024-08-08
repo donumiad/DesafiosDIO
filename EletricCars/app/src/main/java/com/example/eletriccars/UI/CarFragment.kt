@@ -124,9 +124,16 @@ class CarFragment: Fragment() {
     }
 
     fun setupList(lista: List<Carro>){
-        val adapter = CarAdapter(lista)
-        listaCarros.visibility = View.VISIBLE
-        listaCarros.adapter = adapter
+        val carroAdapter = CarAdapter(lista)
+        listaCarros.apply {
+            visibility = View.VISIBLE
+            adapter = carroAdapter
+        }
+        carroAdapter.carItemLister = { carro ->
+            val bateria = carro.bateria
+        }
+
+
     }
 
     fun callService(){
@@ -216,7 +223,8 @@ class CarFragment: Fragment() {
                         bateria = bateria,
                         potencia = potencia,
                         recarga = recarga,
-                        urlPhoto = urlPhoto
+                        urlPhoto = urlPhoto,
+                        isFavorite = false
                     )
 
                     carrosArray.add(model)

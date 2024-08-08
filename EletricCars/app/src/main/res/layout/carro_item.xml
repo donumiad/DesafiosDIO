@@ -28,14 +28,17 @@
                 android:layout_height="30dp"
                 android:src="@drawable/star_unselected"
                 android:layout_margin="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 />
 
             <ImageView
                 android:id="@+id/iv_imageView"
-                android:layout_width="300dp"
-                android:layout_height="150dp"
+                android:layout_width="268dp"
+                android:layout_height="131dp"
                 android:layout_marginTop="10dp"
                 android:contentDescription="@string/iv_representacao_de_carro"
                 app:layout_constraintEnd_toEndOf="parent"
