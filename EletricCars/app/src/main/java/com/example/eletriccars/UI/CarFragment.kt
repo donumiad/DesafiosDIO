@@ -1,5 +1,6 @@
 package com.example.eletriccars.UI
 
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
@@ -20,6 +21,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eletriccars.Data.CarApi
 import com.example.eletriccars.Data.CarFactory
+import com.example.eletriccars.Data.local.CArDbHelper
+import com.example.eletriccars.Data.local.CarRepository
+import com.example.eletriccars.Data.local.CarrosContract
+import com.example.eletriccars.Data.local.CarrosContract.CarEntre.TABLE_NAME
 import com.example.eletriccars.R
 import com.example.eletriccars.UI.adapters.CarAdapter
 import com.example.eletriccars.domain.Carro
@@ -130,7 +135,7 @@ class CarFragment: Fragment() {
             adapter = carroAdapter
         }
         carroAdapter.carItemLister = { carro ->
-            val bateria = carro.bateria
+            val isSaved = CarRepository(requireContext()).save(carro)
         }
 
 
@@ -239,26 +244,6 @@ class CarFragment: Fragment() {
 
             }
         }
-
-        /*fun streamToString(inputStream: InputStream): String{
-            val bufferedReader = BufferedReader(InputStreamReader(inputStream))
-
-            var line: String
-            var result = ""
-
-            try {
-                do{
-                    line = bufferedReader.readLine()
-                    line?.let {
-                        result += line
-                    }
-                } while (line != null)
-            } catch (ex: Exception){
-                Log.e("Erro", "Erro ao parcelar Stream")
-            }
-
-            return result
-        }*/
-
     }
+
 }
