@@ -9,23 +9,29 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.eletriccars.R
 import com.example.eletriccars.domain.Carro
 
-class CarAdapter(private val carros: List<Carro>):
+class CarAdapter(private val carros: List<Carro>, private val isFavoriteScreen : Boolean = false):
     RecyclerView.Adapter<CarAdapter.ViewHolder>() {
 
         var carItemLister : (Carro) -> Unit = {}
 
+    //cria uma nova view
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.carro_item, parent,false)
         return ViewHolder(view)
     }
 
+    //pega a quantidade de carros na lista
     override fun getItemCount(): Int = carros.size
 
+    //Pega o conteudo da view e troca pela inforamação de um item da lista
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.preco.text = carros[position].preco
         holder.potencia.text = carros[position].potencia
         holder.bateria.text = carros[position].bateria
         holder.recarga.text = carros[position].recarga
+        if (isFavoriteScreen){
+            holder.favorito.setImageResource(R.drawable.star_selected)
+        }
         holder.favorito.setOnClickListener{
             val carro = carros[position]
             carItemLister(carro)

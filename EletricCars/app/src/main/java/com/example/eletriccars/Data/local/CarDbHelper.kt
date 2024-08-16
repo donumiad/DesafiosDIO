@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import com.example.eletriccars.Data.local.CarrosContract.SQL_DELETE_ENTRIES
 import com.example.eletriccars.Data.local.CarrosContract.TABLE_CAR
 
-class CArDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class CarDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
 
     override fun onCreate(db: SQLiteDatabase?) {

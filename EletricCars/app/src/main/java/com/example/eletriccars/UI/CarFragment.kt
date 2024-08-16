@@ -1,6 +1,5 @@
 package com.example.eletriccars.UI
 
-import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
@@ -12,7 +11,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -20,27 +18,18 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eletriccars.Data.CarApi
-import com.example.eletriccars.Data.CarFactory
-import com.example.eletriccars.Data.local.CArDbHelper
 import com.example.eletriccars.Data.local.CarRepository
-import com.example.eletriccars.Data.local.CarrosContract
-import com.example.eletriccars.Data.local.CarrosContract.CarEntre.TABLE_NAME
 import com.example.eletriccars.R
 import com.example.eletriccars.UI.adapters.CarAdapter
 import com.example.eletriccars.domain.Carro
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.json.JSONArray
-import org.json.JSONObject
 import org.json.JSONTokener
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
-import java.io.BufferedReader
-import java.io.InputStream
-import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -137,8 +126,6 @@ class CarFragment: Fragment() {
         carroAdapter.carItemLister = { carro ->
             val isSaved = CarRepository(requireContext()).save(carro)
         }
-
-
     }
 
     fun callService(){
