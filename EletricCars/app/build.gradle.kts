@@ -33,18 +33,35 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
 dependencies {
 
-    implementation (libs.retrofit)
+    // Jetpack Compose integration
+    implementation(libs.navigation.compose)
+
+    // Views/Fragments integration
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
+
+    // Feature module support for Fragments
+    implementation(libs.navigation.dynamic.features.fragment)
+
+    // Testing Navigation
+    androidTestImplementation(libs.navigation.testing)
+
+
     implementation(libs.gson)
+    implementation(libs.material)
+    testImplementation(libs.junit)
+    implementation (libs.retrofit)
+    implementation(libs.androidx.activity)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-    testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
+    implementation(libs.androidx.constraintlayout)
     androidTestImplementation(libs.androidx.espresso.core)
 }

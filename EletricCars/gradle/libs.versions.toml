@@ -11,8 +11,14 @@ activity = "1.9.1"
 constraintlayout = "2.1.4"
 retrofit = "2.11.0"
 gson = "2.11.0"
+navigation = "2.8.0"
 
 [libraries]
+navigation-ui = {group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
+navigation-dynamic-features-fragment = {group = "androidx.navigation", name = "navigation-dynamic-features-fragment", version.ref = "navigation" }
+navigation-testing = {group = "androidx.navigation", name = "navigation-testing", version.ref = "navigation" }
+navigation-compose = {group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
+navigation-fragment = {group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigation"}
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

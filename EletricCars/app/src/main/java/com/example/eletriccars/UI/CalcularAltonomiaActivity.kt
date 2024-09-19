@@ -63,7 +63,6 @@ class CalcularAltonomiaActivity: AppCompatActivity() {
         with(sharedPref.edit()){
             putFloat(getString(R.string.saved_calc), resultado)
             apply()
-
         }
     }
 
