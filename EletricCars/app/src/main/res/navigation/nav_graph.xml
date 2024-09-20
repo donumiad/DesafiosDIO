@@ -10,4 +10,9 @@
         android:name="com.example.eletriccars.UI.CarFragment"
         android:label="MainActivity"
         tools:layout="@layout/fragment_car"/>
+    <fragment
+        android:id="@+id/favoritFragment"
+        android:name="com.example.eletriccars.UI.FavoritFragment"
+        android:label="FavoritFragment"
+        tools:layout="@layout/fragment_car"/>
 </navigation>

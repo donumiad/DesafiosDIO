@@ -21,6 +21,7 @@ import com.example.eletriccars.Data.CarApi
 import com.example.eletriccars.Data.local.CarRepository
 import com.example.eletriccars.R
 import com.example.eletriccars.UI.adapters.CarAdapter
+import com.example.eletriccars.databinding.FragmentCarBinding
 import com.example.eletriccars.domain.Carro
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.json.JSONArray
@@ -35,26 +36,31 @@ import java.net.URL
 
 class CarFragment: Fragment() {
 
-    private lateinit var btnCalcularmain: FloatingActionButton
-    lateinit var listaCarros: RecyclerView
-    lateinit var barraProgresso: ProgressBar
-    lateinit var noItenetImage: ImageView
-    lateinit var noInternetText: TextView
+    private var _binding: FragmentCarBinding? = null
+    private val binding get() = _binding!!
+
+
     lateinit var carsApi: CarApi
     var carrosArray : ArrayList<Carro> = ArrayList()
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_car, container,false)
+        _binding = FragmentCarBinding.inflate(inflater,container,false)
+
+        return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRetrofit()
-        setupCarFragment(view)
+//        setupCarFragment(view)
         setupListenersmain()
 
     }
@@ -82,9 +88,9 @@ class CarFragment: Fragment() {
         carsApi.getAllCars().enqueue(object: Callback<List<Carro>>{
             override fun onResponse(call: Call<List<Carro>>, response: Response<List<Carro>>) {
                 if (response.isSuccessful){
-                    noItenetImage.visibility = View.GONE
-                    noInternetText.visibility = View.GONE
-                    barraProgresso.visibility = View.GONE
+                    binding.ivNoconection.visibility = View.GONE
+                    binding.tvSemInternet.visibility = View.GONE
+                    binding.pbProgresso.visibility = View.GONE
                     response.body()?.let {
                         setupList(it)
                     }
@@ -101,25 +107,15 @@ class CarFragment: Fragment() {
     }
 
     fun emptyState(){
-        barraProgresso.visibility = View.GONE
-        listaCarros.visibility = View.GONE
-        noItenetImage.visibility = View.VISIBLE
-        noInternetText.visibility = View.VISIBLE
-    }
-
-    fun setupCarFragment(view: View){
-        view.apply {
-            btnCalcularmain = findViewById(R.id.btn_calcularmain)
-            listaCarros = findViewById(R.id.rv_carros)
-            barraProgresso = findViewById(R.id.pb_progresso)
-            noItenetImage = findViewById(R.id.iv_noconection)
-            noInternetText = findViewById(R.id.tv_sem_internet)
-        }
+        binding.pbProgresso.visibility = View.GONE
+        binding.rvCarros.visibility = View.GONE
+        binding.ivNoconection.visibility = View.VISIBLE
+        binding.tvSemInternet.visibility = View.VISIBLE
     }
 
     fun setupList(lista: List<Carro>){
         val carroAdapter = CarAdapter(lista)
-        listaCarros.apply {
+        binding.rvCarros.apply {
             visibility = View.VISIBLE
             adapter = carroAdapter
         }
@@ -128,14 +124,14 @@ class CarFragment: Fragment() {
         }
     }
 
-    fun callService(){
+    /*fun callService(){
         val urlBase = "http://igorbag.github.io/cars-api/cars.json"
         Mytask().execute(urlBase)
 
-    }
+    }*/
 
     fun setupListenersmain(){
-        btnCalcularmain.setOnClickListener{
+        binding.btnCalcularmain.setOnClickListener{
             startActivity(Intent(context, CalcularAltonomiaActivity:: class.java))
         }
     }
@@ -158,7 +154,7 @@ class CarFragment: Fragment() {
             return networkInfo.isConnected
         }
     }
-
+/*
     inner class Mytask: AsyncTask<String, String, String>(){
 
         override fun onPreExecute() {
@@ -231,6 +227,6 @@ class CarFragment: Fragment() {
 
             }
         }
-    }
+    }*/
 
 }

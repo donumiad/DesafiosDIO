@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/carFragment"
+        android:icon="@drawable/baseline_electric_car_24"
+        android:title="@string/tv_carros"/>
+    <item
+        android:id="@+id/favoritFragment"
+        android:icon="@drawable/star_selected"
+        android:title="@string/tv_favoritos"/>
+</menu>

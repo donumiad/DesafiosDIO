@@ -8,8 +8,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.eletriccars.R
+import com.example.eletriccars.databinding.ActivityCalcularAltonomiaBinding
 
 class CalcularAltonomiaActivity: AppCompatActivity() {
+
+    private val binding by lazy { ActivityCalcularAltonomiaBinding.inflate(layoutInflater) }
 
     lateinit var preco: EditText
     lateinit var kmPercorrido: EditText
@@ -19,7 +22,7 @@ class CalcularAltonomiaActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_calcular_altonomia)
+        setContentView(binding.root)
 
         setupViewe()
         setupListeners()

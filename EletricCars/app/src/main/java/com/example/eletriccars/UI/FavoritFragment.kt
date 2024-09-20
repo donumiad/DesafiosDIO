@@ -10,9 +10,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.eletriccars.Data.local.CarRepository
 import com.example.eletriccars.R
 import com.example.eletriccars.UI.adapters.CarAdapter
+import com.example.eletriccars.databinding.FragmentFavoriteBinding
 import com.example.eletriccars.domain.Carro
 
 class FavoritFragment: Fragment() {
+
+    private var _binding: FragmentFavoriteBinding? = null
+    private val binding get() = _binding!!
 
     lateinit var listaCarrosFavoritos: RecyclerView
 
@@ -21,7 +25,14 @@ class FavoritFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_favorite, container,false)
+        _binding = FragmentFavoriteBinding.inflate(inflater,container,false)
+
+        return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
